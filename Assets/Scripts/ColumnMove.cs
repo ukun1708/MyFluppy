@@ -6,6 +6,8 @@ public class ColumnMove : MonoBehaviour
 {
 
     public float speed = 5f;
+
+    public float dead = -4f;
     
 
     // Start is called before the first frame update
@@ -19,7 +21,7 @@ public class ColumnMove : MonoBehaviour
     {
         transform.position = transform.position + new Vector3(speed * Time.deltaTime, 0f, 0f);
 
-        if (transform.position.x < -4f)
+        if (transform.position.x < dead)
         {
             Destroy(this.gameObject);
         }
